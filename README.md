@@ -23,7 +23,7 @@ Crie o banco de dados:
 python database.py
 ```
 
-Consulte e salve o preço de `T4_BAG` em Caerleon:
+Consulte e salve os preços de 10 itens no Black Market:
 
 ```powershell
 python main.py
