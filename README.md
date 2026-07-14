@@ -23,10 +23,12 @@ Crie o banco de dados:
 python database.py
 ```
 
-Liste os itens monitorados:
+Consulte e salve os preços de 10 itens no Black Market:
 
 ```powershell
 python main.py
 ```
 
 O banco é armazenado em `data/albion.db` e não é enviado ao GitHub.
+
+Os preços são obtidos no servidor das Américas do Albion Online Data Project.
