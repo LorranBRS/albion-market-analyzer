@@ -23,10 +23,12 @@ Crie o banco de dados:
 python database.py
 ```
 
-Liste os itens monitorados:
+Consulte e salve o preço de `T4_BAG` em Caerleon:
 
 ```powershell
 python main.py
 ```
 
 O banco é armazenado em `data/albion.db` e não é enviado ao GitHub.
+
+Os preços são obtidos no servidor das Américas do Albion Online Data Project.

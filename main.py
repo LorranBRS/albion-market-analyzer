@@ -1,17 +1,21 @@
-from database import create_database, list_tracked_items
+from api_client import MarketAPIError, fetch_market_price
+from database import create_database, save_market_price
 
 
 def main() -> None:
     create_database()
-    items = list_tracked_items()
 
-    if not items:
-        print("Nenhum item cadastrado.")
+    try:
+        price = fetch_market_price("T4_BAG", "Caerleon")
+    except MarketAPIError as error:
+        print(f"Erro: {error}")
         return
 
-    for item_id, item_name, enabled in items:
-        status = "ativo" if enabled else "inativo"
-        print(f"{item_id} - {item_name} ({status})")
+    save_market_price(price)
+    print(
+        f"Preço salvo: {price['item_id']} em {price['city']} | "
+        f"venda: {price['sell_price_min']} | compra: {price['buy_price_max']}"
+    )
 
 
 if __name__ == "__main__":
